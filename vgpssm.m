@@ -3,6 +3,11 @@ function vgpssm(Y,U,options)
 %
 % Roger Frigola, 2014-2015.
 
+% Check for gpml toolbox
+if ~exist('covSEard.m','file')
+    error('Please start up GPML toolbox. It can be downloaded from http://www.gaussianprocess.org/gpml/code')
+end
+
 S.T = size(Y,1);
 S.numObs = size(Y,2);
 if nargin < 2, U = zeros(S.T,0); end
